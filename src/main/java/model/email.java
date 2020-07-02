@@ -23,8 +23,8 @@ public class email {
         //产品域名,开发者无需替换
         final String domain = "dysmsapi,aliyuecs.com";
 
-        final String accessKeyId = "LTAI4G2Ye1hcf5QvpbHtbRPh";
-        final String accessKeySecret = "FYepRpSA95gqqrPfZDNgKr9Y1FGz4F";
+        final String accessKeyId = "自己的";
+        final String accessKeySecret = "自己的";
 
 
 //        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId, accessKeySecret);
@@ -44,9 +44,9 @@ public class email {
         request.setSysAction("SendSms"); //  设置调用的API方法名
 //        request.putQueryParameter("RegionId","cn-hangzou");
 
-        request.putQueryParameter("PhoneNumbers","13758932806"); //手机号
-        request.putQueryParameter("SignName","明月");//标签名称
-        request.putQueryParameter("TemplateCode","SMS_193244014");//模板code
+        request.putQueryParameter("PhoneNumbers","自己的"); //手机号
+        request.putQueryParameter("SignName","自己的");//标签名称
+        request.putQueryParameter("TemplateCode","自己的");//模板code
         request.putQueryParameter("TemplateParam","{code:123456}");//短信发送内容
         CommonResponse response = null;
         try {
@@ -84,8 +84,8 @@ public class email {
 
     static final String product = "Dysmsapi";
     static final String endpoint  = "dysmsapi.aliyuncs.com";
-    static final String accessKeyId = "LTAI4G2Ye1hcf5QvpbHtbRPh";
-    static final String accessKeySecret = "FYepRpSA95gqqrPfZDNgKr9Y1FGz4F";
+    static final String accessKeyId = "自己的key";
+    static final String accessKeySecret = "自己的keysecret";
 
     public static void send() throws  Exception {
         //自助调整超时时间
@@ -98,9 +98,9 @@ public class email {
 
         //组长请求对象  -阿里云的文档部分内容
         SendSmsRequest request=new SendSmsRequest();
-        request.setPhoneNumbers("15558050065");
-        request.setSignName("明月");
-        request.setTemplateCode("SMS_193244014");
+        request.setPhoneNumbers("电话号码");
+        request.setSignName("名称");
+        request.setTemplateCode("自己模板");
         request.setTemplateParam("{\"code\":\"1111\"}");
         //可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
         request.setOutId("yourOutId");
