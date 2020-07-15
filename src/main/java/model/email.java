@@ -1,15 +1,14 @@
-package aliy.poji;
+package model;
+
+
 
 import com.aliyuncs.CommonRequest;
 import com.aliyuncs.CommonResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
-import com.aliyuncs.dysmsapi.model.v20170525.SendSmsRequest;
-import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.profile.IClientProfile;
 
 public class email {
 
@@ -23,8 +22,8 @@ public class email {
         //产品域名,开发者无需替换
         final String domain = "dysmsapi,aliyuecs.com";
 
-        final String accessKeyId = "自己的";
-        final String accessKeySecret = "自己的";
+        final String accessKeyId = "LTAI4G2Ye1hcf5QvpbHtbRPh";
+        final String accessKeySecret = "FYepRpSA95gqqrPfZDNgKr9Y1FGz4F";
 
 
 //        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId, accessKeySecret);
@@ -44,9 +43,9 @@ public class email {
         request.setSysAction("SendSms"); //  设置调用的API方法名
 //        request.putQueryParameter("RegionId","cn-hangzou");
 
-        request.putQueryParameter("PhoneNumbers","自己的"); //手机号
-        request.putQueryParameter("SignName","自己的");//标签名称
-        request.putQueryParameter("TemplateCode","自己的");//模板code
+        request.putQueryParameter("PhoneNumbers","13757713217"); //手机号
+        request.putQueryParameter("SignName","明月");//标签名称
+        request.putQueryParameter("TemplateCode","SMS_193244014");//模板code
         request.putQueryParameter("TemplateParam","{code:123456}");//短信发送内容
         CommonResponse response = null;
         try {
@@ -80,33 +79,5 @@ public class email {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
-
-    static final String product = "Dysmsapi";
-    static final String endpoint  = "dysmsapi.aliyuncs.com";
-    static final String accessKeyId = "自己的key";
-    static final String accessKeySecret = "自己的keysecret";
-
-    public static void send() throws  Exception {
-        //自助调整超时时间
-        System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
-        System.setProperty("sun.net.client.defaultReadTimeout", "10000");
-        //初始化acsClient,暂不支持region化
-        IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId, accessKeySecret);
-        DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", product, endpoint );
-        IAcsClient acsClient = new DefaultAcsClient(profile);
-
-        //组长请求对象  -阿里云的文档部分内容
-        SendSmsRequest request=new SendSmsRequest();
-        request.setPhoneNumbers("电话号码");
-        request.setSignName("名称");
-        request.setTemplateCode("自己模板");
-        request.setTemplateParam("{\"code\":\"1111\"}");
-        //可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
-        request.setOutId("yourOutId");
-        //选填-上行短信扩展码(无特殊需求用户请忽略此字段)
-        request.setSmsUpExtendCode("90997");
-        SendSmsResponse response=acsClient.getAcsResponse(request);
-        System.out.println(response);
     }
 }
