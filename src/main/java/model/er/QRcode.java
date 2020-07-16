@@ -39,8 +39,8 @@ public class QRcode {
         }
     }
     public static void main(String[] args) {
-        String msg = "pillar666";
-        String path = "D:\\code\\pillar666.png";
+        String msg = "96";
+        String path = "D:\\code\\5.png";
         QRcode.getBarCode(msg,path);
     }
 }
