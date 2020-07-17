@@ -1,5 +1,6 @@
 import model.ce.Str;
 import model.email;
+import model.merag_pictures.Pictures;
 import model.oss.OssUtil;
 
 import java.io.*;
@@ -20,14 +21,22 @@ public class test {
 //        String let=scanner.next();
 //        Matcher matcher=p.matcher(let);
 //        System.out.println(matcher.matches());
-        String ss="D:\\file\\files\\20200716\\1-A2.png";
-        FileInputStream file= null;
-        try {
-            file = new FileInputStream(ss);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        String name="1-A2.png";
-        OssUtil.uploadImageToOSS(name,file);
+//        String ss="D:\\file\\files\\20200716\\1-A2.png";
+//        FileInputStream file= null;
+//        try {
+//            file = new FileInputStream(ss);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        String name="1-A2.png";
+//        OssUtil.uploadImageToOSS(name,file);
+
+        String ss=" file:///D:/file/files/20200716/1-A2.png";
+//        Class c=ss.getClass().getEnclosingClass();
+//        boolean f=false;
+//        System.out.println();
+//        System.out.println(c);
+
+        Pictures.generateCode(ss,"5","123");
     }
 }
