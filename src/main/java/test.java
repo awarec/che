@@ -32,11 +32,12 @@ public class test {
 //        OssUtil.uploadImageToOSS(name,file);
 
         String ss=" file:///D:/file/files/20200716/1-A2.png";
+        String merchant=" file:///D:/code/111.png";
 //        Class c=ss.getClass().getEnclosingClass();
 //        boolean f=false;
 //        System.out.println();
 //        System.out.println(c);
 
-        Pictures.generateCode(ss,"5","123");
+        Pictures.generateCode(ss,"5","123",merchant);
     }
 }
