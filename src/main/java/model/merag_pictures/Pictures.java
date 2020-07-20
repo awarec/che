@@ -54,8 +54,8 @@ public class Pictures {                 //二维码地址       //名字        
             e.printStackTrace();
         }
         // 返回给页面的图片地址(因为绝对路径无法访问)
-        imgName =  "codeImg/" + userId + ".png";
-        System.out.println(imgName);
+//        imgName =  "codeImg/" + userId + ".png";
+//        System.out.println(imgName);
         return imgName;
     }
 }

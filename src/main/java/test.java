@@ -1,5 +1,6 @@
 import model.ce.Str;
 import model.email;
+import model.er.Address;
 import model.merag_pictures.Pictures;
 import model.oss.OssUtil;
 
@@ -37,7 +38,30 @@ public class test {
 //        boolean f=false;
 //        System.out.println();
 //        System.out.println(c);
-
+        System.out.println( System.getProperty("Address.java"));
+        File file=new File("model.er.Address");
+//        String path=file.getAbsolutePath();
+        String absPath1 = file.getAbsolutePath();//获取文件的绝对路径，即全路径 返回的是String对象
+//        path=file.getPath();
+        System.out.println(absPath1);
+        String classPath = test.class.getResource("/").getPath();
+        System.out.println(classPath);
         Pictures.generateCode(ss,"5","123",merchant);
+        System.out.println( Class.class.getClass().getResource("/").getPath());
+
+        //获取类加载的根路径
+        File file3 = new File(Address.class.getClass().getResource("/").getPath());
+        System.out.println(file3);
+//
+//        //获取当前类的所在工程路径
+//        File file4 = new File(this.getClass().getResource("").getPath());
+//        System.out.println(file4);
+        File file1=new File("");
+        try {
+            String s=file1.getCanonicalPath();
+            System.out.println(s);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
