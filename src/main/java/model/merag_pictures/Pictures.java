@@ -1,7 +1,7 @@
 package model.merag_pictures;
 
 import model.ce.Str;
-import sun.security.pkcs11.wrapper.Constants;
+//import sun.security.pkcs11.wrapper.Constants;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
